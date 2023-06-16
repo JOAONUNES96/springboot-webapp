@@ -21,6 +21,8 @@ public class Spring5webappApplicationTests {
 		long count = bookRepository.count();
 		assertThat(count).isGreaterThan(0);
 
+
+
     }
 
 }
