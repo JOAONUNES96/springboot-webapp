@@ -1,10 +1,17 @@
 package guru.springframework.spring5webapp.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import guru.springframework.spring5webapp.repositories.BookRepository;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.util.Objects;
+
+
+/**
+ * Created by João Nunes on 12/06/2023.
+ */
 
 @Entity
 public class Book {
