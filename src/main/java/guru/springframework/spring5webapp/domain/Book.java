@@ -21,8 +21,16 @@ public class Book {
     private String title;
     private String isbn;
     private String publisher;
+    private Long authorId;
 
     public Book() {
+    }
+
+    public Book(String title, String isbn, String publisher, Long authorId) {
+        this.title = title;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.authorId = authorId;
     }
 
     @Override
@@ -38,12 +46,6 @@ public class Book {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
-    }
-
-    public Book(String title, String isbn, String publisher) {
-        this.title = title;
-        this.isbn = isbn;
-        this.publisher = publisher;
     }
 
     public Long getId() {
