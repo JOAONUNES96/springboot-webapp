@@ -8,5 +8,6 @@
   http://www.liquibase.org/xml/ns/pro
   http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd"><![CDATA[
     ]]><include  file="db/changelog/ init-hibernate.xml"/>
-    <include file="db/changelog/baseline-changelog.xml"></include>
+    <include file="db/changelog/baseline-changelog.xml"/>
+        <include file="db/changelog/add-author.xml"/>
 </databaseChangeLog>
