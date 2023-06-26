@@ -5,6 +5,7 @@ create table book (
                       isbn varchar(255),
                       publisher varchar(255),
                       title varchar(255),
+                      author_id bigint,
                       primary key (id)
 ) engine=InnoDB;
 
