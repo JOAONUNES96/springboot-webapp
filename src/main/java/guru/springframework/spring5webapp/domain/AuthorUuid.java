@@ -17,7 +17,7 @@ public class AuthorUuid {
     @JdbcTypeCode(value = Types.VARCHAR)
     @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false )
     private UUID id;
-    
+
     private String firstName;
     private String lastName;
 
