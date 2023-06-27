@@ -10,7 +10,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
  * Created by João Nunes on 12/06/2023.
  */
 @SpringBootTest
-class SdjpaIntroApplicationTests {
+class Spring5webappApplicationTests {
 
     @Autowired
     BookRepository bookRepository;
