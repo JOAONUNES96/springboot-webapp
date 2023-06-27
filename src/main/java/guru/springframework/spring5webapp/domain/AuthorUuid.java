@@ -1,4 +1,5 @@
 package guru.springframework.spring5webapp.domain;
+
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.Type;
 
@@ -14,8 +15,8 @@ import java.util.UUID;
 public class AuthorUuid {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JdbcTypeCode(value = Types.VARCHAR)
-    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false )
+    @Type(type="org.hibernate.type.UUIDCharType")
+    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID id;
 
     private String firstName;
