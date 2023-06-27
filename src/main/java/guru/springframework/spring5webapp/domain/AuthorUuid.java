@@ -15,7 +15,7 @@ import java.util.UUID;
 public class AuthorUuid {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Type(type="org.hibernate.type.UUIDCharType")
+    @JdbcTypeCode(value = Types.VARCHAR)
     @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID id;
 
