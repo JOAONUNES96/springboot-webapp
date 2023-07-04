@@ -3,10 +3,9 @@ package guru.springframework.spring5webapp;
 import guru.springframework.spring5webapp.domain.AuthorUuid;
 import guru.springframework.spring5webapp.domain.BookNatural;
 import guru.springframework.spring5webapp.domain.BookUuid;
-import guru.springframework.spring5webapp.repositories.AuthorUuidRepository;
-import guru.springframework.spring5webapp.repositories.BookNaturalRepository;
-import guru.springframework.spring5webapp.repositories.BookRepository;
-import guru.springframework.spring5webapp.repositories.BookUuidRepository;
+import guru.springframework.spring5webapp.domain.composite.AuthorComposite;
+import guru.springframework.spring5webapp.domain.composite.NameId;
+import guru.springframework.spring5webapp.repositories.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -33,6 +32,24 @@ public class MySQLIntegrationTest {
     AuthorUuidRepository authorUuidRepository;
     @Autowired
     BookNaturalRepository bookNaturalRepository;
+    @Autowired
+    AuthorCompositeRepository authorCompositeRepository;
+
+
+    @Test
+    void testCompositeTest() {
+        NameId nameId = new NameId("John", "Doe");
+        AuthorComposite authorComposite = new AuthorComposite();
+        authorComposite.setFirstName(nameId.getFirstName());
+        authorComposite.setLastName(nameId.getLastName());
+        authorComposite.setCountry("USA");
+
+        AuthorComposite savedAuthorComposite = authorCompositeRepository.save(authorComposite); //saves the authorComposite object to the database
+        assertThat(savedAuthorComposite).isNotNull();
+
+        AuthorComposite fetchedAuthorComposite = authorCompositeRepository.getById(nameId); //fetches the authorComposite object from the database
+        assertThat(fetchedAuthorComposite).isNotNull(); //asserts that the fetched authorComposite object is not null
+    }
 
 
     @Test
