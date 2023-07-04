@@ -1,8 +1,11 @@
 package guru.springframework.spring5webapp.domain.composite;
 
+import jakarta.persistence.Embeddable;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Embeddable
 public class NameId implements Serializable {
 
     private String firstName;
